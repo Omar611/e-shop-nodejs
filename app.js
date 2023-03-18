@@ -1,5 +1,5 @@
 require("dotenv").config();
-// async errors
+require("express-async-errors");
 
 const express = require("express");
 
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 const productsRoutes = require("./routes/products");
 
 // use routes
-// app.use("/api/v1/products", productsRoutes);
+app.use("/api/v1/products", productsRoutes);
 
 //  middleware
 app.use(express.static("public"));
